@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>E2M Store</title>
+
+    <link rel="icon" href="images/E2M_logo.jpg" type="image/jpg">
+    <link
+        rel="stylesheet"
+        href="css/style.css?v=10"
+    >
+
+</head>
+
+<body>
+
+<header class="main-header home-header">
+
+    <a href="index.html" class="logo">
+        <img src="images/E2M_logo.jpg">
+    </a>
+
+    <a href="cart.html" class="cart-button">
+        <img src="images/cart.jpeg">
+        <span id="cartCount">0</span>
+    </a>
+
+</header>
+
+
+<section class="hero">
+
+    <h1>
+        Electronics, Robotics & IoT Components
+    </h1>
+
+    <p>
+        Find components for your next project.
+    </p>
+
+</section>
+
+
+<section class="controls">
+
+    <div class="search-container">
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search products..."
+                autocomplete="off"
+            >
+
+            <button
+                type="button"
+                id="searchButton"
+                class="search-button"
+                aria-label="Search"
+            >
+                🔍
+            </button>
+
+        </div>
+
+        <div
+            id="searchSuggestions"
+            class="search-suggestions"
+        ></div>
+
+    </div>
+
+
+    <select id="categorySelect">
+
+        <option value="">
+            All Categories
+        </option>
+
+    </select>
+
+</section>
+
+
+<main>
+
+    <h2 id="productTitle">
+        Featured Products
+    </h2>
+
+    <div
+        id="productGrid"
+        class="product-grid"
+    >
+
+        <p>
+            Loading products...
+        </p>
+
+    </div>
+
+</main>
+
+
+<footer class="store-footer">
+
+    <div class="footer-container">
+
+        <div class="footer-info">
+
+            <div class="footer-about">
+
+                <a href="index.html">
+                    <img
+                        src="images/E2M_logo.jpg"
+                        alt="E2M Store"
+                        class="footer-logo"
+                    >
+                    
+                </a>
+
+                <p class="footer-contact">
+                    <img
+                        src="images/address.png"
+                        alt="Address"
+                        class="footer-contact-icon"
+                    >
+
+                    <span>
+                        Address: 7B, Borey Li Theanlok, Plov Betong,
+                        Phum Rong Chak, Sangkat Kork Khleang,
+                        Khan Sen Sok, Phnom Penh
+                    </span>
+                </p>
+
+
+                <p class="footer-contact">
+
+                    <img
+                        src="images/telegram-logo.png"
+                        alt="Telegram"
+                        class="footer-contact-icon"
+                    >
+
+                    <span>
+                        Telegram Chat:
+
+                        <a
+                            href="https://t.me/E_2_M_store"
+                            target="_blank"
+                            class="telegram-chat-link"
+                        >
+                            E2M Store
+
+                            <img
+                                src="images/open-link.png"
+                                class="open-link-icon"
+                                alt="Open Telegram"
+                            >
+                        </a>
+                    </span>
+
+                </p>
+
+
+                <p class="footer-contact">
+
+                    <img
+                        src="images/phone.png"
+                        alt="Mobile"
+                        class="footer-contact-icon"
+                    >
+
+                    <span>
+                        Mobile:
+                        <a href="tel:+85598490500">
+                            098 490 500
+                        </a>
+                    </span>
+
+                </p>
+
+            </div>
+
+            <div class="footer-map">
+
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15634.434688064852!2d104.85713725!3d11.57988625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310951bf38ba82a3%3A0xd711b23aef935a95!2sE2M%20Store!5e0!3m2!1sen!2skh!4v1785680507700!5m2!1sen!2skh"
+                    loading="lazy"
+                    allowfullscreen=""
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-community">
+
+            <h2>Our Communities</h2>
+
+            <div class="footer-line"></div>
+
+            <a
+                href="https://web.facebook.com/profile.php?id=100033124764055"
+                target="_blank"
+                class="social-link"
+            >
+                <img src="images/facebook-logo.png" alt="Facebook">
+                <span>Facebook Page</span>
+            </a>
+
+            <a
+                href="https://www.tiktok.com/@e2m_store?_r=1&_t=ZN-98Y4X9bISqk"
+                target="_blank"
+                class="social-link"
+            >
+                <img src="images/tiktok-logo.png" alt="TikTok">
+                <span>TikTok</span>
+            </a>
+
+            <a
+                href="https://t.me/+kU6UgCa9hd8wNGE1"
+                target="_blank"
+                class="social-link"
+            >
+                <img src="images/telegram-logo.png" alt="Telegram">
+                <span>Telegram Channel</span>
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 E2M Store
+    </div>
+
+</footer>
+
+
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/home.js"></script>
+
+</body>
+
+</html>
