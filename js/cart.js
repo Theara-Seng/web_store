@@ -221,55 +221,55 @@ function updateTotal() {
 
 function checkout() {
 
-    if (cart.length === 0) {
-        return;
-    }
+        if (cart.length === 0) {
+            return;
+        }
+
+        let message =
+    `🛒 E2M Order
+
+    `;
+
+        let total = 0;
 
 
-    let message =
-`Hello ${CONFIG.STORE_NAME},
+        cart.forEach((item, index) => {
 
-I would like to place an order:
+            const subtotal =
+                Number(item.price) * item.quantity;
 
-`;
-
-
-    let total = 0;
+            total += subtotal;
 
 
-    cart.forEach((item, index) => {
-
-        const subtotal =
-            Number(item.price)
-            * item.quantity;
+            const productLink =
+                `https://e2mstore.com/product.html?id=${encodeURIComponent(item.id)}`;
 
 
-        total += subtotal;
+            message +=
+    `${index + 1}. ${item.name}
+    ID: ${item.id}
+    Qty: ${item.quantity}
+    Total: $${subtotal.toFixed(2)}
+
+    ${productLink}
+
+    `;
+
+        });
 
 
         message +=
-`${index + 1}. ${item.name}
-Product ID: ${item.id}
-Quantity: ${item.quantity}
-$${Number(item.price).toFixed(2)} × ${item.quantity} = $${subtotal.toFixed(2)}
-
-`;
-
-    });
+    `Order Total: $${total.toFixed(2)}`;
 
 
-    message +=
-`Total: $${total.toFixed(2)}`;
+        const telegramURL =
+            `https://t.me/${CONFIG.TELEGRAM_USERNAME}?text=${encodeURIComponent(message)}`;
 
 
-    const telegramURL =
-        `https://t.me/${CONFIG.TELEGRAM_USERNAME}?text=${encodeURIComponent(message)}`;
-
-
-    window.open(
-        telegramURL,
-        "_blank"
-    );
+        window.open(
+            telegramURL,
+            "_blank"
+        );
 }
 
 

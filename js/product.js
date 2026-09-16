@@ -566,14 +566,12 @@ function addRelatedToCart(id){
 }
 
 
-
 function buyRelatedNow(id){
 
     const product =
         allProducts.find(
             p => String(p.id) === String(id)
         );
-
 
     const quantity =
         Number(
@@ -582,24 +580,23 @@ function buyRelatedNow(id){
             ).value
         );
 
-
     const total =
         Number(product.price) * quantity;
 
+    const productLink =
+        `https://e2mstore.com/product.html?id=${encodeURIComponent(currentProduct.id)}`;
 
-    const message = `Hello ${CONFIG.STORE_NAME},
+    const message =
+        `🛒 E2M Order
 
-I would like to order:
+        ${product.name}
+        ID: ${product.id}
+        Qty: ${quantity}
+        Total: $${total.toFixed(2)}
 
-Product: ${product.name}
-Product ID: ${product.id}
-Quantity: ${quantity}
-Price: $${Number(product.price).toFixed(2)}
-Total: $${total.toFixed(2)}`;
-
+        🔗 ${productLink}`;
 
     openTelegram(message);
-
 }
 
 function changeQuantity(change) {
@@ -717,27 +714,24 @@ function buyNow() {
 
     const quantity =
         Number(
-            document.getElementById(
-                "quantity"
-            ).value
+            document.getElementById("quantity").value
         );
 
-
     const total =
-        Number(currentProduct.price)
-        * quantity;
+        Number(currentProduct.price) * quantity;
 
+    const productLink =
+        `https://e2mstore.com/product.html?id=${encodeURIComponent(currentProduct.id)}`;
 
-    const message = `Hello ${CONFIG.STORE_NAME},
+    const message =
+        `🛒 E2M Order
 
-I would like to order:
+        ${currentProduct.name}
+        ID: ${currentProduct.id}
+        Qty: ${quantity}
+        Total: $${total.toFixed(2)}
 
-Product: ${currentProduct.name}
-Product ID: ${currentProduct.id}
-Quantity: ${quantity}
-Price: $${Number(currentProduct.price).toFixed(2)}
-Total: $${total.toFixed(2)}`;
-
+        🔗 ${productLink}`;
 
     openTelegram(message);
 }

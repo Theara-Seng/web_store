@@ -191,16 +191,18 @@ function displayProducts(products) {
             const total =
                 Number(product.price) * quantity;
 
+            const productLink =
+                `https://e2mstore.com/product.html?id=${encodeURIComponent(product.id)}`;
+
             const message =
-        `Hello ${CONFIG.STORE_NAME},
+            `🛒 E2M Order
 
-        I would like to order:
+            ${product.name}
+            ID: ${product.id}
+            Qty: ${quantity}
+            Total: $${total.toFixed(2)}
 
-        Product: ${product.name}
-        Product ID: ${product.id}
-        Quantity: ${quantity}
-        Price: $${Number(product.price).toFixed(2)}
-        Total: $${total.toFixed(2)}`;
+            🔗 ${productLink}`;
 
             const telegramURL =
                 `https://t.me/${CONFIG.TELEGRAM_USERNAME}?text=${encodeURIComponent(message)}`;
